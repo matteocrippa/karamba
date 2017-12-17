@@ -32,6 +32,8 @@ compile 'com.github.matteocrippa:karamba:0.0.1'
 ## Date
 - `convertTo(format)`, converts current date to a custom format provided as argument (eg. `dd-MM-yy HH:mm`)
 - `toCalendar()`, converts current date to `Calendar`
+- `isFuture()`, returns true if date is in the future
+- `isPast()`, returns true if date is in the past
 
 ## Double
 - `localCurrency(currency)`, converts current double to the currency format passed as argument (eg. `EUR`)

@@ -27,3 +27,11 @@ fun Date.toCalendar(): Calendar {
     cal.time = this
     return cal
 }
+
+fun Date.isFuture(): Boolean {
+    return !Date().before(this)
+}
+
+fun Date.isPast(): Boolean {
+    return Date().before(this)
+}
