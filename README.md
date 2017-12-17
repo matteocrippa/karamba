@@ -1,6 +1,8 @@
 # karamba
 A collection of useful Kotlin extension for Android
 
+![karamba](https://github.com/matteocrippa/karamba/blob/master/.github/karamba.png?raw=true)
+
 # Install
 
 Add to **gradle** in _allprojects_
@@ -48,3 +50,8 @@ compile 'com.github.matteocrippa:karamba:0.0.1'
 
 ## View
 - `toBitmap()`, converts current view into `Bitmap`
+
+
+#### Credits
+
+Icon is taken by free emojii set by [Vincent Le Moign](https://dribbble.com/webalys)
