@@ -39,10 +39,14 @@ compile 'com.github.matteocrippa:karamba:0.0.1'
 ## Int
 - `readableDistanceFromMeters()`, converts an int amount of meters in a readable meter, kilometers distance
 - `commaSeparatedId()`, converts an array of int, in a string of comma separated items
+- `random()`, provides a random number in the range provided (eg. `(0..10).random()`)
 
 ## String
 - `isValidEmail()`, returns if current string is a valid email
 - `isUrl()`, returns if current string is a valid url
+- `isNumeric()`, returns if current string contains a number
+- `isPhoneNumber()`, returns if current string contains a phone number
+- `random(lenght)`, returns a random string of provided length
 - `toBitmap()`, convert current base64 string into Bitmap
 - `ellipsize(chars)`, ellipsizes the current string, truncating at defined amount of characters
 - `toDate(format)`, converts current string in a `Date` object using the provided format

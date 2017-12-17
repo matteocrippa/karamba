@@ -8,6 +8,7 @@ import java.util.*
  * Created by matteocrippa on 17/12/2017.
  */
 
+// Converts current date to proper provided format
 fun Date.convertTo(format: String): String? {
     var dateStr: String? = null
     val df = SimpleDateFormat(format)
@@ -20,6 +21,7 @@ fun Date.convertTo(format: String): String? {
     return dateStr
 }
 
+// Converts current date to Calendar
 fun Date.toCalendar(): Calendar {
     val cal = Calendar.getInstance()
     cal.time = this

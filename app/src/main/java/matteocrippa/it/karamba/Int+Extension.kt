@@ -1,5 +1,7 @@
 package matteocrippa.it.karamba
 
+import java.util.*
+
 /**
  * Created by matteocrippa on 17/12/2017.
  */
@@ -17,3 +19,6 @@ fun ArrayList<Int>.commaSeparatedId(): String? {
         acc + "$num, "
     }
 }
+
+fun ClosedRange<Int>.random() =
+        Random().nextInt(endInclusive - start) +  start

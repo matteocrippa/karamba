@@ -21,6 +21,32 @@ fun String.isUrl(): Boolean {
     return URLUtil.isValidUrl(this)
 }
 
+fun String.isNumeric(): Boolean {
+    try {
+        val d = java.lang.Double.parseDouble(this)
+    } catch (nfe: NumberFormatException) {
+        return false
+    }
+
+    return true
+}
+
+fun String.isPhoneNumber(): Boolean {
+    return android.util.Patterns.PHONE.matcher(this).matches()
+}
+
+fun String.random(length: Int = 8): String {
+    val random = Random()
+    val base = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+"
+    var randomString: String = ""
+
+    for (i in 1..length) {
+        val randomValue = (0..base.count()).random()
+        randomString += "${base[randomValue]}"
+    }
+    return randomString
+}
+
 fun String.toBitmap(): Bitmap {
     val decoded = Base64.decode(this, Base64.DEFAULT)
     return BitmapFactory.decodeByteArray(decoded, 0, decoded.count())
