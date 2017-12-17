@@ -5,5 +5,9 @@ package matteocrippa.it.karamba
  */
 
 fun Boolean.toggle(): Boolean {
-    return !this
+    !this
+}
+
+fun Boolean.random() {
+    (0..1).random() as Boolean
 }

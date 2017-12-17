@@ -27,6 +27,7 @@ compile 'com.github.matteocrippa:karamba:0.0.1'
 
 ## Boolean
 - `toggle()`, handle the bool as a toogle changing the value to opposite one
+- `random()`, returns a random boolean value
 
 ## Date
 - `convertTo(format)`, converts current date to a custom format provided as argument (eg. `dd-MM-yy HH:mm`)
