@@ -14,7 +14,7 @@ maven { url 'https://jitpack.io' }
 then add this
 
 ```
-compile 'com.github.matteocrippa:karamba:0.0.1'
+compile 'com.github.matteocrippa:karamba:0.0.2'
 ```
 
 # Usage
@@ -37,6 +37,8 @@ compile 'com.github.matteocrippa:karamba:0.0.1'
 
 ## Double
 - `localCurrency(currency)`, converts current double to the currency format passed as argument (eg. `EUR`)
+- `celsiusToFahrenheit`, converts current double to fahrenheit
+- `fahrenheitToCelsius`, converts current double to celsius
 
 ## Drawable
 - `toBitmap()`, converts the current drawable in `Bitmap`

@@ -12,3 +12,11 @@ fun Double.localCurrency(locale: String): String {
     format.currency = Currency.getInstance(locale)
     return format.format(this)
 }
+
+fun Double.celsiusToFahrenheit(): Double {
+    return this * 9 / 5 + 32
+}
+
+fun Double.fahrenheitToCelsius(): Double {
+    return (this - 32) * 5 / 9
+}
