@@ -1,8 +1,10 @@
 package matteocrippa.it.karamba
 
+import android.text.format.DateUtils
 import android.util.Log
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 /**
  * Created by matteocrippa on 17/12/2017.
@@ -34,4 +36,32 @@ fun Date.isFuture(): Boolean {
 
 fun Date.isPast(): Boolean {
     return Date().before(this)
+}
+
+fun Date.isToday(): Boolean {
+    return DateUtils.isToday(this.time)
+}
+
+fun Date.isYesterday(): Boolean {
+    return DateUtils.isToday(this.time + DateUtils.DAY_IN_MILLIS)
+}
+
+fun Date.isTomorrow(): Boolean {
+    return DateUtils.isToday(this.time - DateUtils.DAY_IN_MILLIS)
+}
+
+fun Date.today(): Date {
+    return Date()
+}
+
+fun Date.yesterday(): Date {
+    val cal = this.toCalendar()
+    cal.add(Calendar.DAY_OF_YEAR, -1)
+    return cal.time
+}
+
+fun Date.tomorrow(): Date {
+    val cal = this.toCalendar()
+    cal.add(Calendar.DAY_OF_YEAR, 1)
+    return cal.time
 }

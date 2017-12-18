@@ -34,11 +34,17 @@ compile 'com.github.matteocrippa:karamba:0.0.2'
 - `toCalendar()`, converts current date to `Calendar`
 - `isFuture()`, returns true if date is in the future
 - `isPast()`, returns true if date is in the past
+- `isToday()`, returns if current date is today
+- `isTomorrow()`, returns if current date is tomorrow
+- `isYesterday()`, returns if current date is yesterday
+- `today()`, returns today's date
+- `tomorrow()`, returns tomorrow's date
+- `yesterday()`, returns yesterday's date
 
 ## Double
 - `localCurrency(currency)`, converts current double to the currency format passed as argument (eg. `EUR`)
-- `celsiusToFahrenheit`, converts current double to fahrenheit
-- `fahrenheitToCelsius`, converts current double to celsius
+- `celsiusToFahrenheit()`, converts current double to fahrenheit
+- `fahrenheitToCelsius()`, converts current double to celsius
 
 ## Drawable
 - `toBitmap()`, converts the current drawable in `Bitmap`
