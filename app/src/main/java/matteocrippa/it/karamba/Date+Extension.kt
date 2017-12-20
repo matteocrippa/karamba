@@ -4,6 +4,8 @@ import android.text.format.DateUtils
 import android.util.Log
 import java.text.SimpleDateFormat
 import java.util.*
+import jdk.nashorn.internal.objects.NativeDate.getTime
+import java.text.DateFormat
 
 
 /**
@@ -64,4 +66,12 @@ fun Date.tomorrow(): Date {
     val cal = this.toCalendar()
     cal.add(Calendar.DAY_OF_YEAR, 1)
     return cal.time
+}
+
+fun Date.month(): Int? {
+    return this.convertTo("MM")?.toInt()
+}
+
+fun Date.monthName(): String? {
+    return this.convertTo("MMMM")
 }
