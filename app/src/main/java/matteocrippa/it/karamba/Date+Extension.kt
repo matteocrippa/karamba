@@ -4,9 +4,6 @@ import android.text.format.DateUtils
 import android.util.Log
 import java.text.SimpleDateFormat
 import java.util.*
-import jdk.nashorn.internal.objects.NativeDate.getTime
-import java.text.DateFormat
-
 
 /**
  * Created by matteocrippa on 17/12/2017.
