@@ -65,10 +65,42 @@ fun Date.tomorrow(): Date {
     return cal.time
 }
 
-fun Date.month(): Int? {
-    return this.convertTo("MM")?.toInt()
+fun Date.hour(): Int {
+    return this.toCalendar().get(Calendar.HOUR)
 }
 
-fun Date.monthName(): String? {
-    return this.convertTo("MMMM")
+fun Date.minute(): Int {
+    return this.toCalendar().get(Calendar.MINUTE)
+}
+
+fun Date.second(): Int {
+    return this.toCalendar().get(Calendar.SECOND)
+}
+
+fun Date.month(): Int {
+    return this.toCalendar().get(Calendar.MONTH) + 1
+}
+
+fun Date.monthName(locale: Locale? = Locale.getDefault()): String {
+    return this.toCalendar().getDisplayName(Calendar.MONTH, Calendar.LONG, locale)
+}
+
+fun Date.year(): Int {
+    return this.toCalendar().get(Calendar.YEAR)
+}
+
+fun Date.day(): Int {
+    return this.toCalendar().get(Calendar.DAY_OF_MONTH)
+}
+
+fun Date.dayOfWeek(): Int {
+    return this.toCalendar().get(Calendar.DAY_OF_WEEK)
+}
+
+fun Date.dayOfWeekName(locale: Locale? = Locale.getDefault()): String {
+    return this.toCalendar().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, locale)
+}
+
+fun Date.dayOfYear(): Int {
+    return this.toCalendar().get(Calendar.DAY_OF_YEAR)
 }

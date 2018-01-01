@@ -40,8 +40,17 @@ compile 'com.github.matteocrippa:karamba:0.0.5'
 - `today()`, returns today's date
 - `tomorrow()`, returns tomorrow's date
 - `yesterday()`, returns yesterday's date
+- `hour()`, returns current date hour as number
+- `minute()`, returns current date minutes as number
+- `second()`, returns current date seconds as number
 - `month()`, returns current date month as number
 - `monthName()`, returns current date month as long name
+- `year()`, returns current date year as number
+- `day()`, returns current date day as number
+- `dayOfWeek()`, returns current date day of the week as number
+- `dayOfWeekName()`, returns current date weekday as string
+- `dayOfYear()`, returns current date day of year as number
+
 
 ## Double
 - `localCurrency(currency)`, converts current double to the currency format passed as argument (eg. `EUR`)
