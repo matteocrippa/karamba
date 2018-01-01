@@ -14,7 +14,7 @@ maven { url 'https://jitpack.io' }
 then add this
 
 ```
-compile 'com.github.matteocrippa:karamba:0.0.5'
+compile 'com.github.matteocrippa:karamba:0.0.6'
 ```
 
 # Usage
