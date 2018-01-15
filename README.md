@@ -14,12 +14,16 @@ maven { url 'https://jitpack.io' }
 then add this
 
 ```
-compile 'com.github.matteocrippa:karamba:0.0.6'
+compile 'com.github.matteocrippa:karamba:0.0.7'
 ```
 
 # Usage
 `Karamba` provides you a list of different and useful extensions for your project, here the list organized by the type extended.
 
+## General
+- `support(apiVersion)`, lambda that allow you to run code only if current SDK is up to specified one
+- `supportKitkat()`, lambda that checks if kitkat is supported and run the code
+- `supportLollipop()`, lambda that checks if lollipop is supported and run the code
 
 ## Bitmap
 - `base64()`, produces a base64 representation of the current bitmap 
