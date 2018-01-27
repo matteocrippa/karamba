@@ -14,7 +14,7 @@ maven { url 'https://jitpack.io' }
 then add this
 
 ```
-compile 'com.github.matteocrippa:karamba:0.0.7'
+compile 'com.github.matteocrippa:karamba:1.1.0'
 ```
 
 # Usage
@@ -79,6 +79,8 @@ compile 'com.github.matteocrippa:karamba:0.0.7'
 - `ellipsize(chars)`, ellipsizes the current string, truncating at defined amount of characters
 - `toDate(format)`, converts current string in a `Date` object using the provided format
 - `plainText()`, removes all html formatting from current string
+- `toCamelCase()`, camel case the current string current string
+
 
 ## View
 - `toBitmap()`, converts current view into `Bitmap`
