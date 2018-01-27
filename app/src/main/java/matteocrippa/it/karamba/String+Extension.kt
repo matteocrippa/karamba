@@ -75,3 +75,10 @@ fun String.toDate(withFormat: String = "yyyy/MM/dd hh:mm"): Date {
 fun String.plainText(): String {
     return android.text.Html.fromHtml(this).toString()
 }
+
+fun String.toCamelCase(): String {
+    if (this == null || TextUtils.isEmpty(this))
+        return ""
+    return Character.toUpperCase(this[0]) +
+            this.substring(1).toLowerCase()
+}
