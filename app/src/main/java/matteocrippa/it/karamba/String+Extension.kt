@@ -7,7 +7,8 @@ import android.util.Base64
 import android.webkit.URLUtil
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
+import java.util.Random
 
 /**
  * Created by matteocrippa on 17/12/2017.
@@ -47,9 +48,20 @@ fun String.random(length: Int = 8): String {
     return randomString
 }
 
-fun String.toBitmap(): Bitmap {
+fun String.toBitmap(maxWidth: Int = 800, maxHeight: Int = 800): Bitmap {
     val decoded = Base64.decode(this, Base64.DEFAULT)
-    return BitmapFactory.decodeByteArray(decoded, 0, decoded.count())
+
+    // First decode with inJustDecodeBounds=true to check dimensions
+    val options = BitmapFactory.Options()
+    options.inJustDecodeBounds = true
+    BitmapFactory.decodeByteArray(decoded, 0, decoded.count(), options)
+
+    // Calculate inSampleSize
+    options.inSampleSize = calculateInSampleSize(options, maxWidth, maxHeight)
+
+    // Decode bitmap with inSampleSize set
+    options.inJustDecodeBounds = false
+    return BitmapFactory.decodeByteArray(decoded, 0, decoded.count(), options)
 }
 
 fun String.ellipsize(at: Int): String {
@@ -81,4 +93,26 @@ fun String.toCamelCase(): String {
         return ""
     return Character.toUpperCase(this[0]) +
             this.substring(1).toLowerCase()
+}
+
+fun calculateInSampleSize(
+    options: BitmapFactory.Options, reqWidth: Int, reqHeight: Int): Int {
+    // Raw height and width of image
+    val height = options.outHeight
+    val width = options.outWidth
+    var inSampleSize = 1
+
+    if (height > reqHeight || width > reqWidth) {
+
+        val halfHeight = height / 2
+        val halfWidth = width / 2
+
+        // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+        // height and width larger than the requested height and width.
+        while (halfHeight / inSampleSize >= reqHeight && halfWidth / inSampleSize >= reqWidth) {
+            inSampleSize *= 2
+        }
+    }
+
+    return inSampleSize
 }
