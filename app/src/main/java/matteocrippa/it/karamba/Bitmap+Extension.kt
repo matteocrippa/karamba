@@ -23,8 +23,7 @@ fun Bitmap.resize(newWidth: Int, newHeight: Int): Bitmap {
     val scaleHeight = newHeight.toFloat() / height
     val matrix = Matrix()
     matrix.postScale(scaleWidth, scaleHeight)
-    val resizedBitmap = Bitmap.createBitmap(
-            this, 0, 0, width, height, matrix, false)
+    val resizedBitmap = Bitmap.createScaledBitmap(this, width, height, false)
     resizedBitmap.recycle()
     return resizedBitmap
 }
