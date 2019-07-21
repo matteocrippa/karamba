@@ -18,7 +18,14 @@ fun Bitmap.base64(): String {
 }
 
 fun Bitmap.resize(newWidth: Int, newHeight: Int): Bitmap {
-    return Bitmap.createScaledBitmap(this, newWidth, newHeight, false)
+    val scaleWidth = newWidth.toFloat() / width
+    val scaleHeight = newHeight.toFloat() / height
+    val matrix = Matrix()
+    matrix.postScale(scaleWidth, scaleHeight)
+    val resizedBitmap = Bitmap.createBitmap(
+            this, 0, 0, width, height, matrix, false)
+    this.recycle()
+    return resizedBitmap
 }
 
 /**
